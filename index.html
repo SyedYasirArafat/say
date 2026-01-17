@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description"
+        content="Superweb - Your Digital Nation-State OS. One platform for entertainment, finance, governance, justice, and education.">
+    <title>Superweb | Digital Nation-State OS</title>
+    <link rel="stylesheet" href="styles/main.css">
+    <link rel="stylesheet" href="styles/modules.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap"
+        rel="stylesheet">
+</head>
+
+<body>
+    <!-- SAY-AI Governor Notification Toast -->
+    <div id="ai-toast" class="ai-toast hidden">
+        <div class="ai-toast-icon">🤖</div>
+        <div class="ai-toast-content">
+            <div class="ai-toast-title">SAY-AI Governor</div>
+            <div class="ai-toast-message"></div>
+        </div>
+        <button class="ai-toast-close" onclick="closeAIToast()">×</button>
+    </div>
+
+    <!-- Super-Shell Container -->
+    <div class="super-shell">
+        <!-- Sidebar Navigation -->
+        <aside class="sidebar">
+            <div class="sidebar-header">
+                <div class="logo">
+                    <span class="logo-icon">◈</span>
+                    <span class="logo-text">SUPERWEB</span>
+                </div>
+                <div class="logo-tagline">Digital Nation-State OS</div>
+            </div>
+
+            <!-- User Profile Mini -->
+            <div class="user-profile-mini">
+                <div class="user-avatar">
+                    <span>SA</span>
+                    <div class="status-dot online"></div>
+                </div>
+                <div class="user-info">
+                    <div class="user-name">SAY Citizen</div>
+                    <div class="user-tier">PRO Member</div>
+                </div>
+            </div>
+
+            <!-- Type Navigation -->
+            <nav class="type-nav">
+                <div class="nav-section-title">MODULES</div>
+
+                <button class="type-btn active" data-type="a" id="nav-type-a">
+                    <span class="type-icon">📺</span>
+                    <span class="type-label">FlimXgo</span>
+                    <span class="type-sublabel">Live & Consume</span>
+                </button>
+
+                <button class="type-btn" data-type="b" id="nav-type-b">
+                    <span class="type-icon">💰</span>
+                    <span class="type-label">SAY Finance</span>
+                    <span class="type-sublabel">Earn & Grow</span>
+                </button>
+
+                <button class="type-btn" data-type="c" id="nav-type-c">
+                    <span class="type-icon">🏛️</span>
+                    <span class="type-label">GovConnect</span>
+                    <span class="type-sublabel">Citizen ID</span>
+                </button>
+
+                <button class="type-btn" data-type="d" id="nav-type-d">
+                    <span class="type-icon">⚖️</span>
+                    <span class="type-label">Justice OS</span>
+                    <span class="type-sublabel">Fairness</span>
+                </button>
+
+                <button class="type-btn" data-type="f" id="nav-type-f">
+                    <span class="type-icon">📚</span>
+                    <span class="type-label">Intellect</span>
+                    <span class="type-sublabel">Learn & Evolve</span>
+                </button>
+
+                <button class="type-btn" data-type="e" id="nav-type-e">
+                    <span class="type-icon">❤️</span>
+                    <span class="type-label">SAY Vitality</span>
+                    <span class="type-sublabel">Health & Emergency</span>
+                </button>
+            </nav>
+
+            <!-- SAY-AI Quick Actions -->
+            <div class="ai-section">
+                <div class="nav-section-title">SAY-AI GOVERNOR</div>
+                <div class="ai-status">
+                    <div class="ai-pulse"></div>
+                    <span>Active & Watching</span>
+                </div>
+                <button class="ai-action-btn" onclick="triggerScenario('job-loss')">
+                    <span>🔔</span> Demo: Job Loss
+                </button>
+                <button class="ai-action-btn" onclick="triggerScenario('test-fail')">
+                    <span>📉</span> Demo: Test Failed
+                </button>
+                <button class="ai-action-btn" onclick="triggerScenario('traffic-ticket')">
+                    <span>🚗</span> Demo: Traffic Ticket
+                </button>
+            </div>
+
+            <!-- Sidebar Footer -->
+            <div class="sidebar-footer">
+                <div class="subscription-badge">
+                    <span class="badge-icon">⭐</span>
+                    <span>SAY Pro Active</span>
+                </div>
+            </div>
+        </aside>
+
+        <!-- Main Content Area -->
+        <main class="main-content">
+            <!-- Top Bar -->
+            <header class="top-bar">
+                <div class="search-container">
+                    <span class="search-icon">🔍</span>
+                    <input type="text" class="search-input" placeholder="Search across all modules...">
+                    <kbd class="search-shortcut">⌘K</kbd>
+                </div>
+                <div class="top-bar-actions">
+                    <button class="icon-btn" title="Notifications">
+                        <span>🔔</span>
+                        <span class="notification-badge">3</span>
+                    </button>
+                    <button class="icon-btn" title="Settings">⚙️</button>
+                    <button class="icon-btn" title="Help">❓</button>
+                </div>
+            </header>
+
+            <!-- Module Container (Lazy Loaded) -->
+            <div class="module-container" id="module-container">
+                <!-- Loading State -->
+                <div class="module-loading" id="module-loading">
+                    <div class="loader">
+                        <div class="loader-ring"></div>
+                        <div class="loader-ring"></div>
+                        <div class="loader-ring"></div>
+                    </div>
+                    <p>Loading <span id="loading-module-name">FlimXgo</span>...</p>
+                </div>
+
+                <!-- Module Content (injected by JavaScript) -->
+                <div class="module-content" id="module-content">
+                    <!-- Type A: FlimXgo will load here by default -->
+                </div>
+            </div>
+        </main>
+
+        <!-- Right Panel (Contextual) -->
+        <aside class="right-panel" id="right-panel">
+            <div class="panel-header">
+                <h3>Quick Actions</h3>
+                <button class="panel-close" onclick="toggleRightPanel()">×</button>
+            </div>
+            <div class="panel-content" id="panel-content">
+                <!-- Dynamic content based on active module -->
+            </div>
+        </aside>
+    </div>
+
+    <!-- Scripts -->
+    <script src="scripts/core.js"></script>
+    <script src="scripts/say-ai-governor.js"></script>
+    <script>
+        // Initialize Super-Shell
+        document.addEventListener('DOMContentLoaded', () => {
+            initSuperShell();
+        });
+    </script>
+</body>
+
+</html>

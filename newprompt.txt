@@ -1,0 +1,219 @@
+THE PERSONA: SYED YASIR ARAFAT
+Role: Senior Systems Architect
+
+Location: HSR Layout, Sector 4, Bengaluru, Karnataka
+
+Narrative Arc: High-income earner who relies on the "Superweb" AI to manage his complex life. The demo starts on Jan 28th, the day his salary is delayed.
+
+1. CORE IDENTITY & GOVERNANCE (Type C)
+This data drives the "Verified" status in the app header.
+
+JSON
+{
+  "user_profile": {
+    "uuid": "usr_88291_say_v6",
+    "full_name": "Syed Yasir Arafat",
+    "display_name": "Yasir",
+    "dob": "1997-08-14",
+    "citizenship": "Indian",
+    "say_id_trust_level": 5,
+    "kyc_status": "VERIFIED_PLATINUM",
+    "linked_ids": {
+      "aadhaar_last_4": "8821",
+      "pan_hash": "cr7_encrypted_x99",
+      "passport_status": "ACTIVE_VALID_2032"
+    },
+    "voter_status": {
+      "registered": true,
+      "constituency": "Bangalore South",
+      "last_voted": "2024-05-12"
+    }
+  }
+}
+2. FINANCE & WEALTH (Type B)
+This data populates the graph and the "Crisis" trigger.
+
+JSON
+{
+  "finance_portfolio": {
+    "wallet_id": "wal_b_2201",
+    "current_balance": 142050.00,
+    "currency": "INR",
+    "monthly_burn_rate": 45000.00,
+    "credit_score": 782,
+    "salary_status": {
+      "employer": "TechNova Solutions",
+      "expected_date": "2026-01-25",
+      "last_received": "2025-12-25",
+      "status": "OVERDUE_CRITICAL" 
+    },
+    "holdings": [
+      {
+        "ticker": "SAYTECH",
+        "name": "SAY Technologies",
+        "qty": 500,
+        "avg_buy": 120.50,
+        "current_price": 145.20,
+        "pnl_percent": 20.4
+      },
+      {
+        "ticker": "RELIANCE",
+        "name": "Reliance Ind",
+        "qty": 50,
+        "avg_buy": 2400.00,
+        "current_price": 2380.00,
+        "pnl_percent": -0.8
+      }
+    ],
+    "subscriptions": [
+      { "name": "FlimXgo Premium", "cost": 199, "status": "ACTIVE" },
+      { "name": "Gym Pro", "cost": 2000, "status": "ACTIVE" },
+      { "name": "SAY Citizen", "cost": 1499, "status": "ACTIVE" }
+    ]
+  }
+}
+3. LIFESTYLE & CONSUMPTION (Type A)
+Populates the "FlimXgo" carousel and Social features.
+
+JSON
+{
+  "lifestyle_prefs": {
+    "streaming_profile": {
+      "user": "Syed Yasir",
+      "watch_time_balance": "42 Hours Remaining",
+      "current_binge": "Breaking Bad",
+      "recommendations": [
+        { "title": "The Startup", "genre": "Drama", "match": "98%" },
+        { "title": "Black Mirror", "genre": "Sci-Fi", "match": "95%" },
+        { "title": "Scam 1992", "genre": "Bio", "match": "92%" }
+      ]
+    },
+    "social": {
+      "status": "Online",
+      "holoportation_device": "iPhone 16 Pro",
+      "recent_calls": [
+        { "name": "Ammi", "type": "HOLO_3D", "duration": "14m" },
+        { "name": "Broker (AI)", "type": "VOICE", "duration": "2m" }
+      ]
+    }
+  }
+}
+4. LEGAL & JUSTICE (Type D)
+The "Hook" for the investor demo: A pending issue the AI is solving.
+
+JSON
+{
+  "legal_record": {
+    "status": "CLEAN",
+    "active_cases": [
+      {
+        "case_id": "KA01-2026-TRF-992",
+        "type": "TRAFFIC_VIOLATION",
+        "description": "Signal Jump at Silk Board Junction",
+        "fine_amount": 1000,
+        "issued_at": "2026-01-15T08:30:00Z",
+        "ai_analysis": {
+          "probability_of_win": 68.5,
+          "defense_strategy": "GPS_LOG_ERROR",
+          "action_taken": "CONTESTED_AUTO"
+        }
+      }
+    ]
+  }
+}
+5. EDUCATION & SKILLS (Type F)
+Shows how the AI suggests "Upskilling" when the job is at risk.
+
+JSON
+{
+  "academic_transcript": {
+    "degree": "B.Arch (Architecture)",
+    "alma_mater": "RV College",
+    "skill_tree": {
+      "Design": "Level 8 (Master)",
+      "Project_Mgmt": "Level 5 (Pro)",
+      "AI_Tools": "Level 2 (Beginner)"
+    },
+    "active_courses": [
+      {
+        "course_id": "AI_ARCH_101",
+        "title": "Generative Design with AI",
+        "progress": 35,
+        "is_job_critical": true
+      }
+    ]
+  }
+}
+6. THE "DEMO TRIGGER" PAYLOAD
+This is the specific event object your code should listen for to trigger the "Red Alert" UI.
+
+JSON
+{
+  "system_event": {
+    "trigger_id": "EVT_SALARY_MISSING_001",
+    "timestamp": "2026-01-28T09:00:00Z",
+    "target_user": "usr_88291_say_v6",
+    "type": "FINANCIAL_ANOMALY",
+    "payload": {
+      "message": "Regular salary deposit from 'TechNova' is 3 days overdue.",
+      "severity": "HIGH",
+      "suggested_actions": [
+        "ACTIVATE_AUSTERITY_MODE",
+        "PAUSE_SUBSCRIPTIONS",
+        "OPEN_GIG_HUB"
+      ]
+    }
+  }
+}
+How to use this data:
+For the Demo Video: Hard-code these values into your Flutter State variables so they load instantly (no loading spinners).
+
+For the Trigger: When you double-tap the logo (using the code I gave you), simply inject the "Trigger Payload" (Section 6) into the app stream, and watch the UI update from "Green" to "Red."
+The "Z-Swipe" Gesture (UX Idea)
+Instead of digging through menus, the user draws a "Z" on the screen to summon the SAY-AI Governor overlay.
+
+The Pitch: "In other apps, you search for help. In SAYzy, you just sign 'Z' like Zorro."
+
+Demo Moment: Yasir is watching a movie (Type A). He draws a "Z" on top of the video. The AI instantly pops up: "I noticed you have a court hearing in 1 hour. Should I pause the movie and open the case file?"
+
+2. "The One-Tap Move" (Feature Idea)
+Moving houses is a nightmare (changing address on Aadhaar, Bank, Gas, Amazon, Swiggy).
+
+The SAYzy Fix: Yasir enters his new address once in Type C (Gov).
+
+The Automation: SAYzy automatically pushes this update to Type B (Bank), Type A (Shopping), and Type C (Voter ID).
+
+The Pitch: "We turned 30 forms into one tap. That is the power of a Civilization OS."
+
+3. "Ghost Mode" (Privacy Idea)
+Since you are storing sensitive data, users might get paranoid.
+
+The Feature: A privacy toggle that creates a "Faraday Cage" around the user's data.
+
+Visual: The blue "Z" turns White.
+
+What it does: It disconnects Type C (Gov) and Type A (Social) location tracking entirely. Only Type B (Payments) remains active for emergencies.
+
+Why Investors Love It: It proves you respect privacy, which is the #1 regulatory hurdle.
+
+4. "SAYzy Junior" (The Child Account)
+How do you get the next generation hooked?
+
+Concept: A limited version for kids (Under 18).
+
+The Hook: They earn "Allowance" (Type B) only when they complete "Skill Tree Nodes" (Type F).
+
+Scenario: Yasir's son wants ₹500 for a game. Yasir says, "Complete the Python Level 1 module in SAYzy, and the money will auto-transfer."
+
+5. The "Panic Button" Integration (Safety)
+If SAYzy is a "Life OS," it must save lives.
+
+The Feature: If Yasir is in a medical emergency or danger, he triple-taps the physical power button on his phone.
+
+The Chain Reaction:
+
+Type C: Sends GPS to Police/Ambulance.
+
+Type E (Health): Flashes his Blood Type and Insurance ID on the lock screen for paramedics.
+
+Type B: Unlocks a ₹50,000 emergency fund for immediate hospital admission fees.
